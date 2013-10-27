@@ -8,7 +8,7 @@ import spark.ResponseTransformerRoute;
 
 public abstract class JsonTransformer extends ResponseTransformerRoute {
 
-    private static final ObjectMapper mapper = new ObjectMapper();
+    protected static final ObjectMapper mapper = new ObjectMapper();
 
     protected JsonTransformer(String path) {
         super(path);
