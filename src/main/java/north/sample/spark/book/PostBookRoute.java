@@ -22,12 +22,14 @@ public class PostBookRoute extends JsonTransformer {
 			book = mapper.readValue(request.body(), Book.class);
 		} catch (IOException e) {
 			
-			response.status(500); // Server-side error
+			response.status(500); // Server-side error test
 			
 			return createErrorResponse("Book couldn't be saved");
 		}
+		
         Ebean.save(book);
         response.status(201); // 201 Created
+        
         return book;
     }
     
